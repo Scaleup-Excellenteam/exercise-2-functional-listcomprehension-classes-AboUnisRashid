@@ -1,3 +1,4 @@
+import os.path
 
 
 def decode_image(image_path):
@@ -24,3 +25,19 @@ def decode_image(image_path):
         message = ''.join([chr(row) for row in black_pixels])
         return message
 
+
+def main():
+    """
+    Main function that loads an image and deciphers the hidden message.
+
+    Prints the deciphered message or an error message if the image file is not found.
+    """
+    if os.path.exists('resources/code.png'):
+        with Image.open('resources/code.png') as image:
+            print(decode_image(image))
+    else:
+        print("Image file not found.")
+
+
+if __name__ == '__main__':
+    main()

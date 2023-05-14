@@ -11,4 +11,10 @@ def group_by(func, iterable):
     return {func(item): [i for i in iterable if func(i) == func(item)] for item in iterable}
 
 
-print(group_by(len, ["hi", "bye", "yo", "try"]))
+def main():
+    print(group_by(len, ["hi", "bye", "yo", "try"]))
+    return 0
+
+
+if __name__ == '__main__':
+    main()

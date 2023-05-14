@@ -15,3 +15,13 @@ def timer(f, *args, **kwargs):
     real_time = f"{run_time:.6f}"
     return real_time
 
+
+def main():
+    print(timer(print, "Hello"))
+    print(timer(zip, [1, 2, 3], [4, 5, 6]))
+    print(timer("Hi {name}".format, name="Bug"))
+    return 0
+
+
+if __name__ == '__main__':
+    main()
